@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SY Danışmanlık | 1:1 Sosyal Medya Danışmanlığı</title>
-    <meta name="description" content="SY Danışmanlık ile sosyal medyada büyümeni sağlayacak 1:1 danışmanlık hizmetlerini keşfet. Saatlik analiz ya da aylık birebir eğitim sürecini seç.">
-    <meta name="keywords" content="sosyal medya danışmanlığı, saatlik danışmanlık, aylık danışmanlık, içerik stratejisi, instagram büyüme, şenol yılmaz">
+    <meta name="description" content="SY Danışmanlık ile sosyal medyada büyümeni sağlayacak 1:1 danışmanlık hizmetlerini keşfet. Saatlik analiz ya da 4 haftalık birebir eğitim sürecini seç.">
+    <meta name="keywords" content="sosyal medya danışmanlığı, saatlik danışmanlık, 1:1 danışmanlık, içerik stratejisi, instagram büyüme, şenol yılmaz">
     <meta name="author" content="Şenol Yılmaz">
     <meta property="og:title" content="SY Danışmanlık — 1:1 Sosyal Medya Danışmanlığı">
-    <meta property="og:description" content="Sosyal medyada büyümeni sağlayacak 1:1 danışmanlık hizmetleri. Saatlik analiz ya da aylık uygulamalı eğitim sürecini seç.">
+    <meta property="og:description" content="Sosyal medyada büyümeni sağlayacak birebir hizmetler. Saatlik analiz ya da 4 haftalık birebir eğitim sürecini seç.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sydanismanlik.com">
     <meta property="og:image" content="https://sydanismanlik.com/og-image.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,600&display=swap" rel="stylesheet">
+
+    <!-- Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -24,276 +30,176 @@
                         sans: ['Satoshi', 'sans-serif'],
                     },
                     colors: {
-                        midnight: '#0F2744',
-                        steel: '#1E3A5F',
-                        glow: '#3B6EA8',
-                        surface: '#F4F8FC',
-                        textPrimary: '#EAF2FF',
-                        textMuted: '#AFC3DE',
+                        background: '#FAFAF8',
+                        textPrimary: '#111827',
+                        textMuted: '#6B7280',
                         whatsapp: '#25D366',
                         whatsappHover: '#20BA56',
                     },
+                    backgroundImage: {
+                        'gradient-accent': 'linear-gradient(135deg, #1E3A5F 0%, #4A90D9 50%, #1E3A5F 100%)',
+                    },
                     boxShadow: {
-                        glass: '0 18px 60px rgba(9, 21, 39, 0.22)',
-                        glow: '0 0 40px rgba(59, 110, 168, 0.28)',
-                        soft: '0 20px 80px rgba(4, 11, 24, 0.28)'
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.04)',
+                        'glow-whatsapp': '0 0 20px rgba(37, 211, 102, 0.4)',
+                        'glow-accent': '0 0 20px rgba(30, 58, 95, 0.3)',
                     }
                 }
             }
         }
     </script>
+
     <style>
-        :root {
-            color-scheme: dark;
-        }
-        * {
-            scroll-behavior: smooth;
-        }
-        body {
-            min-height: 100vh;
-            background:
-                radial-gradient(circle at 15% 20%, rgba(59, 110, 168, 0.24), transparent 28%),
-                radial-gradient(circle at 85% 15%, rgba(89, 153, 226, 0.2), transparent 30%),
-                radial-gradient(circle at 60% 80%, rgba(30, 58, 95, 0.34), transparent 35%),
-                linear-gradient(135deg, #0F2744 0%, #1E3A5F 48%, #3B6EA8 100%);
-            color: #EAF2FF;
-            overflow-x: hidden;
-        }
-        body::before {
-            content: '';
+        /* Aurora Background Effect */
+        .aurora-bg {
             position: fixed;
-            inset: 0;
-            background:
-                linear-gradient(115deg, rgba(255,255,255,0.07), transparent 42%),
-                repeating-linear-gradient(120deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 34px);
-            mix-blend-mode: screen;
-            pointer-events: none;
-        }
-        .glass {
-            background: rgba(14, 27, 48, 0.46);
-            backdrop-filter: blur(22px);
-            -webkit-backdrop-filter: blur(22px);
-            border: 1px solid rgba(184, 213, 255, 0.14);
-            box-shadow: 0 18px 60px rgba(9, 21, 39, 0.22);
-        }
-        .gradient-border {
-            position: relative;
-        }
-        .gradient-border::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            padding: 1px;
-            border-radius: inherit;
-            background: linear-gradient(135deg, rgba(255,255,255,0.34), rgba(59,110,168,0.34), rgba(255,255,255,0.08));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-        }
-        .aurora {
-            position: fixed;
-            inset: 0;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background-color: #FAFAF8;
             overflow: hidden;
-            pointer-events: none;
         }
-        .aurora span {
+        .aurora-bg::before, .aurora-bg::after {
+            content: '';
             position: absolute;
-            border-radius: 999px;
-            filter: blur(80px);
-            opacity: 0.42;
-            animation: drift 18s ease-in-out infinite alternate;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.4;
+            animation: float 20s infinite ease-in-out alternate;
         }
-        .aurora span:nth-child(1) {
-            width: 26rem;
-            height: 26rem;
-            left: -4rem;
-            top: 5rem;
-            background: rgba(79, 139, 214, 0.3);
+        .aurora-bg::before {
+            top: -10%;
+            left: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(30,58,95,0.12) 0%, rgba(250,250,248,0) 70%);
         }
-        .aurora span:nth-child(2) {
-            width: 30rem;
-            height: 30rem;
-            right: -8rem;
-            top: 10rem;
-            background: rgba(20, 44, 75, 0.55);
-            animation-delay: -6s;
+        .aurora-bg::after {
+            bottom: -10%;
+            right: -10%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(74,144,217,0.10) 0%, rgba(250,250,248,0) 70%);
+            animation-delay: -10s;
         }
-        .aurora span:nth-child(3) {
-            width: 22rem;
-            height: 22rem;
-            left: 35%;
-            bottom: -4rem;
-            background: rgba(113, 170, 241, 0.28);
-            animation-delay: -12s;
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(5%, 5%) scale(1.1); }
         }
-        .text-shine {
-            background: linear-gradient(135deg, #F8FBFF 0%, #A5C8F1 45%, #F8FBFF 100%);
+
+        /* Glassmorphism Utilities */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.04);
+        }
+
+        /* Text Gradients */
+        .text-gradient {
+            background: linear-gradient(135deg, #1E3A5F 0%, #4A90D9 50%, #1E3A5F 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .metal-line {
-            background: linear-gradient(90deg, rgba(255,255,255,0), rgba(184,213,255,0.6), rgba(255,255,255,0));
+
+        /* Service Card */
+        .service-card {
+            transition: transform .4s ease, box-shadow .4s ease;
         }
-        .float-card {
-            transition: transform .45s ease, box-shadow .45s ease, border-color .45s ease;
-        }
-        .float-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 26px 80px rgba(8, 20, 36, 0.38);
-        }
-        @keyframes drift {
-            from { transform: translate3d(0, 0, 0) scale(1); }
-            to { transform: translate3d(24px, -18px, 0) scale(1.08); }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 60px rgba(0,0,0,0.08);
         }
     </style>
 </head>
-<body class="font-sans antialiased selection:bg-blue-200 selection:text-slate-950">
-    <div class="aurora">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+<body class="font-sans text-textPrimary antialiased flex flex-col min-h-screen selection:bg-blue-100 selection:text-blue-900">
 
-    <div class="relative z-10">
-        <nav class="max-w-6xl mx-auto px-6 pt-6">
-            <div class="glass gradient-border rounded-[28px] px-5 py-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-                <a href="index.html" class="flex items-center gap-3">
-                    <img src="logo.png" alt="SY Danışmanlık logosu" class="w-12 h-12 rounded-2xl object-cover shadow-lg shadow-slate-950/30">
-                    <div>
-                        <div class="font-bold tracking-tight text-lg">SY Danışmanlık</div>
-                        <div class="text-sm text-textMuted">1:1 sosyal medya danışmanlığı</div>
+    <!-- Ambient Background -->
+    <div class="aurora-bg"></div>
+
+    <!-- Nav -->
+    <nav class="w-full px-6 py-4 max-w-5xl mx-auto flex justify-between items-center bg-transparent z-10 relative">
+        <div class="flex items-center space-x-3">
+            <img src="logo.png" alt="SY Danışmanlık logosu" class="w-10 h-10 rounded-2xl object-cover shadow-lg shadow-slate-900/10">
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-lg tracking-tight">SY Danışmanlık</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-gradient-accent"></span>
+            </div>
+        </div>
+        <div class="flex items-center gap-4 text-sm font-semibold">
+            <a href="index.html" class="text-textPrimary transition-colors duration-300">Ana Sayfa</a>
+            <a href="saatlik.html" class="text-textMuted hover:text-textPrimary transition-colors duration-300">1:1 Danışmanlık Görüşmesi</a>
+            <a href="aylik.html" class="text-textMuted hover:text-textPrimary transition-colors duration-300">1:1 Premium Eğitim Programı</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow relative z-10 flex flex-col items-center justify-center">
+        <!-- Hero Section -->
+        <section class="max-w-4xl mx-auto px-6 pt-16 pb-24 md:pt-24 md:pb-32 text-center flex flex-col items-center">
+
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-black/5 bg-white/50 backdrop-blur-sm mb-6 shadow-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-gradient-accent"></span>
+                <span class="text-xs font-semibold text-textMuted uppercase tracking-widest">Şenol Yılmaz</span>
+            </div>
+
+            <h1 class="text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight mb-5 leading-[1.05]" style="letter-spacing: -0.03em;">
+                <span class="text-gradient">SY Danışmanlık</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-textPrimary/80 font-medium max-w-xl mb-16 leading-relaxed">
+                Sosyal medyada büyümeni sağlayacak birebir hizmetler.
+            </p>
+
+            <!-- Service Buttons -->
+            <div class="flex flex-col md:flex-row gap-5 w-full max-w-2xl">
+
+                <!-- Saatlik -->
+                <a href="saatlik.html" class="glass-card service-card flex-1 rounded-3xl p-7 text-left group">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-accent flex items-center justify-center shadow-sm">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <svg class="w-5 h-5 text-textMuted group-hover:text-textPrimary transition-colors duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"></path></svg>
+                    </div>
+                    <h2 class="text-xl font-bold text-textPrimary mb-2 tracking-tight">1:1 Danışmanlık Görüşmesi</h2>
+                    <p class="text-sm text-textMuted leading-relaxed">Saatlik birebir görüşme</p>
+                </a>
+
+                <!-- Aylık -->
+                <a href="aylik.html" class="glass-card service-card flex-1 rounded-3xl p-7 text-left group relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-50/40 to-transparent pointer-events-none rounded-3xl"></div>
+                    <div class="relative">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-10 h-10 rounded-full bg-gradient-accent flex items-center justify-center shadow-sm">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            </div>
+                            <svg class="w-5 h-5 text-textMuted group-hover:text-textPrimary transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"></path></svg>
+                        </div>
+                        <h2 class="text-xl font-bold text-textPrimary mb-2 tracking-tight">1:1 Premium Eğitim Programı</h2>
+                        <p class="text-sm text-textMuted leading-relaxed">4 hafta süreli birebir mentorluk</p>
                     </div>
                 </a>
-                <div class="flex flex-wrap items-center gap-4 text-sm font-semibold text-textMuted">
-                    <a href="index.html" class="text-white">Ana Sayfa</a>
-                    <a href="saatlik.html" class="hover:text-white transition-colors">Saatlik</a>
-                    <a href="aylik.html" class="hover:text-white transition-colors">Aylık</a>
-                </div>
+
             </div>
-        </nav>
 
-        <main class="max-w-6xl mx-auto px-6 pt-10 pb-16 md:pt-16 md:pb-24">
-            <section class="grid lg:grid-cols-[1.1fr_.9fr] gap-8 items-center">
-                <div>
-                    <div class="inline-flex items-center gap-2 glass gradient-border rounded-full px-4 py-2 text-sm text-textMuted mb-6">
-                        <span class="w-2 h-2 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(147,197,253,.85)]"></span>
-                        Premium danışmanlık deneyimi
-                    </div>
-                    <h1 class="text-5xl md:text-6xl xl:text-7xl font-black leading-[0.95] tracking-[-0.05em] max-w-3xl">
-                        <span class="block text-shine">SY Danışmanlık</span>
-                    </h1>
-                    <p class="mt-6 text-lg md:text-xl text-textMuted max-w-2xl leading-relaxed">
-                        Sosyal medyada büyümeni sağlayacak 1:1 danışmanlık hizmetleri.
-                    </p>
-                    <div class="mt-8 flex flex-wrap gap-4">
-                        <a href="aylik.html" class="inline-flex items-center justify-center rounded-full px-7 py-4 font-semibold text-white bg-white/10 border border-white/15 hover:bg-white/16 transition shadow-glow">
-                            Aylık danışmanlığı keşfet
-                        </a>
-                        <a href="https://wa.me/message/4RDIMC5OULEOO1" target="_blank" class="inline-flex items-center justify-center rounded-full px-7 py-4 font-semibold text-white bg-whatsapp hover:bg-whatsappHover transition shadow-[0_0_30px_rgba(37,211,102,.35)]">
-                            WhatsApp’tan yaz
-                        </a>
-                    </div>
-                </div>
+            <!-- WhatsApp -->
+            <a href="https://wa.me/message/4RDIMC5OULEOO1" target="_blank" class="mt-10 inline-flex items-center justify-center text-whatsapp font-semibold text-sm hover:underline transition-all duration-300">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                WhatsApp'tan ulaş
+            </a>
+        </section>
+    </main>
 
-                <div class="glass gradient-border rounded-[32px] p-6 md:p-8 float-card relative overflow-hidden">
-                    <div class="absolute -right-16 -top-16 w-44 h-44 rounded-full bg-cyan-300/20 blur-3xl"></div>
-                    <div class="absolute -left-10 bottom-0 w-40 h-40 rounded-full bg-blue-950/40 blur-3xl"></div>
-                    <div class="relative">
-                        <div class="text-sm uppercase tracking-[0.28em] text-textMuted mb-4">1:1 yol arkadaşlığı</div>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="glass rounded-3xl p-5">
-                                <div class="text-3xl font-black text-white">1 saat</div>
-                                <p class="mt-2 text-sm text-textMuted">Hızlı analiz ve net yol haritası</p>
-                            </div>
-                            <div class="glass rounded-3xl p-5">
-                                <div class="text-3xl font-black text-white">4 hafta</div>
-                                <p class="mt-2 text-sm text-textMuted">Uygulamalı gelişim ve takip</p>
-                            </div>
-                        </div>
-                        <div class="mt-5 h-px metal-line"></div>
-                        <p class="mt-5 text-textMuted leading-relaxed">
-                            Tek seferlik bir netlik ihtiyacın varsa saatlik paketle başlayabilir, daha derin ve uygulamalı bir süreç istiyorsan aylık programa geçebilirsin.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="mt-12 md:mt-16 grid lg:grid-cols-2 gap-6">
-                <article class="glass gradient-border rounded-[30px] p-7 md:p-9 float-card">
-                    <div class="text-sm uppercase tracking-[0.28em] text-textMuted">Hızlı başlangıç</div>
-                    <h2 class="mt-4 text-3xl md:text-4xl font-bold tracking-[-0.03em]">Saatlik Danışmanlık</h2>
-                    <p class="mt-4 text-textMuted text-lg leading-relaxed">
-                        1 saat birebir görüşme, tek seferlik analiz ve sana özel uygulanabilir yol haritası.
-                    </p>
-                    <ul class="mt-6 space-y-3 text-textMuted">
-                        <li class="flex gap-3"><span class="text-cyan-300">•</span><span>Profil ve içerik incelemesi</span></li>
-                        <li class="flex gap-3"><span class="text-cyan-300">•</span><span>Eksiklerin ve darboğazların tespiti</span></li>
-                        <li class="flex gap-3"><span class="text-cyan-300">•</span><span>Net büyüme planı ve sonraki adımlar</span></li>
-                    </ul>
-                    <a href="saatlik.html" class="mt-8 inline-flex items-center justify-center rounded-full px-6 py-4 font-semibold text-white bg-white/10 border border-white/15 hover:bg-white/15 transition">Saatliği İncele</a>
-                </article>
-
-                <article class="glass gradient-border rounded-[30px] p-7 md:p-9 float-card relative overflow-hidden">
-                    <div class="absolute right-6 top-6 text-xs font-bold tracking-[0.22em] rounded-full px-3 py-2 bg-amber-300 text-slate-900">ÖNERİLEN</div>
-                    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-blue-400/10 to-transparent pointer-events-none"></div>
-                    <div class="text-sm uppercase tracking-[0.28em] text-textMuted">Derin dönüşüm</div>
-                    <h2 class="mt-4 text-3xl md:text-4xl font-bold tracking-[-0.03em]">Aylık Danışmanlık</h2>
-                    <p class="mt-4 text-textMuted text-lg leading-relaxed">
-                        4 hafta süreli birebir eğitim, uygulamalı süreç ve düzenli geri bildirimle içerik üretim sistemini birlikte kuruyoruz.
-                    </p>
-                    <ul class="mt-6 space-y-3 text-textMuted">
-                        <li class="flex gap-3"><span class="text-cyan-300">•</span><span>Haftalık görüşmeler ve görevler</span></li>
-                        <li class="flex gap-3"><span class="text-cyan-300">•</span><span>Üretilen içeriklere düzenli analiz</span></li>
-                        <li class="flex gap-3"><span class="text-cyan-300">•</span><span>Sürdürülebilir büyüme sistemi</span></li>
-                    </ul>
-                    <a href="aylik.html" class="mt-8 inline-flex items-center justify-center rounded-full px-6 py-4 font-semibold text-slate-950 bg-white hover:bg-slate-100 transition shadow-lg">Aylığı İncele</a>
-                </article>
-            </section>
-
-            <section class="mt-14 md:mt-20 grid lg:grid-cols-[.9fr_1.1fr] gap-6 items-start">
-                <div class="glass gradient-border rounded-[30px] p-7 md:p-9">
-                    <div class="text-sm uppercase tracking-[0.28em] text-textMuted">Neden ben?</div>
-                    <h2 class="mt-4 text-3xl font-bold tracking-[-0.03em]">Teoriden çok uygulanabilir netlik</h2>
-                    <div class="mt-6 space-y-4 text-textMuted">
-                        <div class="glass rounded-2xl px-5 py-4">İçerik üretim sürecinde seni yavaşlatan noktaları doğrudan tespit ediyorum.</div>
-                        <div class="glass rounded-2xl px-5 py-4">Ezber tavsiye yerine hesabına ve hedefine göre yön veriyorum.</div>
-                        <div class="glass rounded-2xl px-5 py-4">Sadece ne yapacağını değil, neden yapacağını da netleştiriyorum.</div>
-                        <div class="glass rounded-2xl px-5 py-4">İzlenebilir, sürdürülebilir ve gerçekçi bir sistem kurmana yardım ediyorum.</div>
-                    </div>
-                </div>
-
-                <div class="glass gradient-border rounded-[30px] p-7 md:p-9 relative overflow-hidden">
-                    <div class="absolute -top-20 right-0 w-56 h-56 rounded-full bg-cyan-300/10 blur-3xl"></div>
-                    <h2 class="text-3xl md:text-4xl font-bold tracking-[-0.03em] max-w-xl">
-                        Bir sonraki içerik dönemini rastgele değil, sistemli ilerlet.
-                    </h2>
-                    <p class="mt-5 text-lg text-textMuted max-w-2xl leading-relaxed">
-                        Saatlik görüşmeyle hızlı netlik kazanabilir ya da aylık süreçle içerik üretimini ve büyüme disiplinini birlikte oturtabiliriz.
-                    </p>
-                    <div class="mt-8 flex flex-wrap gap-4">
-                        <a href="https://wa.me/message/4RDIMC5OULEOO1" target="_blank" class="inline-flex items-center justify-center rounded-full px-7 py-4 font-semibold text-white bg-whatsapp hover:bg-whatsappHover transition shadow-[0_0_30px_rgba(37,211,102,.35)]">
-                            WhatsApp’tan başla
-                        </a>
-                        <a href="aylik.html" class="inline-flex items-center justify-center rounded-full px-7 py-4 font-semibold text-white bg-white/10 border border-white/15 hover:bg-white/16 transition">
-                            Aylık süreci incele
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer class="max-w-6xl mx-auto px-6 pb-10">
-            <div class="glass gradient-border rounded-[26px] px-5 py-5 flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-sm text-textMuted">
-                <div>© 2025 SY Danışmanlık. Tüm hakları saklıdır.</div>
-                <div class="flex gap-4">
-                    <a href="index.html" class="hover:text-white transition-colors">Ana Sayfa</a>
-                    <a href="saatlik.html" class="hover:text-white transition-colors">Saatlik</a>
-                    <a href="aylik.html" class="hover:text-white transition-colors">Aylık</a>
-                </div>
-            </div>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer class="w-full py-10 text-center relative z-10">
+        <div class="absolute top-0 left-[20%] right-[20%] h-px bg-gradient-to-r from-transparent via-black/5 to-transparent"></div>
+        <p class="text-sm text-textMuted">&copy; 2025 Şenol Yılmaz. Tüm hakları saklıdır.</p>
+    </footer>
 </body>
 </html>

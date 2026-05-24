@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aylık 1:1 Danışmanlık | SY Danışmanlık</title>
-    <meta name="description" content="4 hafta boyunca birebir, uygulamalı sosyal medya içerik üretimi eğitimi ve danışmanlığı. Aylık programla içerik sistemini birlikte kur.">
-    <meta name="keywords" content="aylık danışmanlık, sosyal medya eğitimi, içerik üretimi eğitimi, instagram danışmanlık, sosyal medya büyüme">
+    <title>1:1 Premium Eğitim Programı | SY Danışmanlık</title>
+    <meta name="description" content="4 haftalık birebir mentorluk programıyla sosyal medyada içerik üretiminin tüm aşamalarını öğren. Haftada 1 görüşme, sürekli destek, uygulamalı geri bildirim.">
+    <meta name="keywords" content="sosyal medya eğitim, 1:1 mentorluk, içerik üretimi, instagram büyüme, şenol yılmaz, premium eğitim">
     <meta name="author" content="Şenol Yılmaz">
-    <meta property="og:title" content="Aylık 1:1 Danışmanlık | SY Danışmanlık">
-    <meta property="og:description" content="4 hafta süren birebir eğitim ve danışmanlık programı ile içerik üretimini, stratejini ve büyüme sistemini birlikte kuruyoruz.">
+    <meta property="og:title" content="1:1 Premium Eğitim Programı | SY Danışmanlık">
+    <meta property="og:description" content="Sosyal medyada içerik üretiminin tüm aşamalarını birebir öğreten 4 haftalık premium mentorluk programı.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sydanismanlik.com/aylik.html">
     <meta property="og:image" content="https://sydanismanlik.com/og-image.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,600&display=swap" rel="stylesheet">
+
+    <!-- Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -24,483 +30,297 @@
                         sans: ['Satoshi', 'sans-serif'],
                     },
                     colors: {
-                        midnight: '#0F2744',
-                        steel: '#1E3A5F',
-                        glow: '#3B6EA8',
-                        textPrimary: '#ECF4FF',
-                        textMuted: '#ABC2E2',
+                        background: '#FAFAF8',
+                        textPrimary: '#111827',
+                        textMuted: '#6B7280',
                         whatsapp: '#25D366',
                         whatsappHover: '#20BA56',
                     },
+                    backgroundImage: {
+                        'gradient-accent': 'linear-gradient(135deg, #1E3A5F 0%, #4A90D9 50%, #1E3A5F 100%)',
+                    },
                     boxShadow: {
-                        glass: '0 24px 90px rgba(4, 11, 24, 0.34)',
-                        cyan: '0 0 50px rgba(82, 151, 235, 0.22)'
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.04)',
+                        'glow-whatsapp': '0 0 20px rgba(37, 211, 102, 0.4)',
+                        'glow-accent': '0 0 20px rgba(30, 58, 95, 0.3)',
                     }
                 }
             }
         }
     </script>
+
     <style>
-        :root {
-            color-scheme: dark;
-        }
-        * {
-            scroll-behavior: smooth;
-        }
-        body {
-            min-height: 100vh;
-            margin: 0;
-            font-family: 'Satoshi', sans-serif;
-            color: #ECF4FF;
-            overflow-x: hidden;
-            background:
-                radial-gradient(circle at 10% 10%, rgba(59, 110, 168, 0.3), transparent 24%),
-                radial-gradient(circle at 88% 14%, rgba(148, 199, 255, 0.14), transparent 28%),
-                radial-gradient(circle at 50% 46%, rgba(24, 47, 78, 0.45), transparent 36%),
-                linear-gradient(160deg, #0F2744 0%, #163252 36%, #1E3A5F 64%, #3B6EA8 100%);
-        }
-        body::before {
-            content: '';
+        /* Aurora Background Effect */
+        .aurora-bg {
             position: fixed;
-            inset: 0;
-            background:
-                radial-gradient(circle at center, rgba(255,255,255,0.06) 0 1px, transparent 1px 100%),
-                linear-gradient(125deg, rgba(255,255,255,0.05), transparent 35%, rgba(255,255,255,0.03) 60%, transparent 100%);
-            background-size: 26px 26px, auto;
-            mask-image: linear-gradient(to bottom, rgba(255,255,255,.45), rgba(255,255,255,.08));
-            pointer-events: none;
-            opacity: .55;
-        }
-        .aurora, .floaters {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background-color: #FAFAF8;
             overflow: hidden;
         }
-        .aurora span, .floaters span {
+        .aurora-bg::before, .aurora-bg::after {
+            content: '';
             position: absolute;
-            border-radius: 999px;
-        }
-        .aurora span {
+            border-radius: 50%;
             filter: blur(100px);
-            opacity: .35;
-            animation: drift 20s ease-in-out infinite alternate;
+            opacity: 0.4;
+            animation: float 20s infinite ease-in-out alternate;
         }
-        .aurora span:nth-child(1) {
-            width: 34rem;
-            height: 34rem;
-            left: -10rem;
-            top: -4rem;
-            background: rgba(92, 153, 227, .34);
+        .aurora-bg::before {
+            top: -10%;
+            left: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(30,58,95,0.12) 0%, rgba(250,250,248,0) 70%);
         }
-        .aurora span:nth-child(2) {
-            width: 28rem;
-            height: 28rem;
-            right: -8rem;
-            top: 16rem;
-            background: rgba(22, 50, 82, .52);
-            animation-delay: -8s;
+        .aurora-bg::after {
+            bottom: -10%;
+            right: -10%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(74,144,217,0.10) 0%, rgba(250,250,248,0) 70%);
+            animation-delay: -10s;
         }
-        .aurora span:nth-child(3) {
-            width: 24rem;
-            height: 24rem;
-            left: 35%;
-            bottom: -8rem;
-            background: rgba(108, 178, 255, .22);
-            animation-delay: -13s;
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(5%, 5%) scale(1.1); }
         }
-        .floaters span {
-            border: 1px solid rgba(220, 236, 255, .12);
-            background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
-            backdrop-filter: blur(10px);
-            animation: floatY 8s ease-in-out infinite;
+
+        /* Glassmorphism Utilities */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.04);
         }
-        .floaters span:nth-child(1) {
-            width: 120px;
-            height: 120px;
-            left: 5%;
-            top: 18%;
-        }
-        .floaters span:nth-child(2) {
-            width: 76px;
-            height: 76px;
-            right: 8%;
-            top: 24%;
-            animation-delay: -2s;
-        }
-        .floaters span:nth-child(3) {
-            width: 96px;
-            height: 96px;
-            left: 12%;
-            bottom: 22%;
-            animation-delay: -4s;
-        }
-        .floaters span:nth-child(4) {
-            width: 144px;
-            height: 144px;
-            right: 10%;
-            bottom: 16%;
-            animation-delay: -1s;
-        }
-        .glass {
-            background: rgba(12, 25, 45, 0.52);
-            backdrop-filter: blur(22px);
-            -webkit-backdrop-filter: blur(22px);
-            border: 1px solid rgba(183, 214, 255, 0.14);
-            box-shadow: 0 24px 90px rgba(4, 11, 24, 0.34);
-        }
-        .gradient-border {
-            position: relative;
-            overflow: hidden;
-        }
-        .gradient-border::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            padding: 1px;
-            border-radius: inherit;
-            background: linear-gradient(135deg, rgba(255,255,255,.3), rgba(59,110,168,.4), rgba(255,255,255,.06));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-        }
-        .text-shine {
-            background: linear-gradient(135deg, #F8FBFF 0%, #A8D0FF 35%, #EAF5FF 70%, #87B9F3 100%);
+
+        /* Text Gradients */
+        .text-gradient {
+            background: linear-gradient(135deg, #1E3A5F 0%, #4A90D9 50%, #1E3A5F 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .eyebrow {
-            letter-spacing: .3em;
-            text-transform: uppercase;
-            font-size: .8rem;
-            color: #ABC2E2;
+
+        /* Border Gradients */
+        .border-gradient-left {
+            position: relative;
         }
-        .metal-line {
-            background: linear-gradient(90deg, rgba(255,255,255,0), rgba(184,213,255,0.7), rgba(255,255,255,0));
-        }
-        .hover-lift {
-            transition: transform .4s ease, box-shadow .4s ease, border-color .4s ease;
-        }
-        .hover-lift:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 90px rgba(4, 11, 24, 0.46);
-        }
-        .stat-value {
-            font-size: clamp(2rem, 4vw, 3.8rem);
-            line-height: 1;
-            font-weight: 900;
-            letter-spacing: -.06em;
-        }
-        details summary::-webkit-details-marker {
-            display: none;
-        }
-        details[open] .plus {
-            transform: rotate(45deg);
-        }
-        @keyframes drift {
-            from { transform: translate3d(0, 0, 0) scale(1); }
-            to { transform: translate3d(24px, -18px, 0) scale(1.12); }
-        }
-        @keyframes floatY {
-            0%,100% { transform: translateY(0); }
-            50% { transform: translateY(-14px); }
+        .border-gradient-left::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #1E3A5F, #4A90D9);
+            border-top-left-radius: 1rem;
+            border-bottom-left-radius: 1rem;
         }
     </style>
 </head>
-<body class="selection:bg-blue-200 selection:text-slate-950">
-    <div class="aurora">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <div class="floaters">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+<body class="text-textPrimary antialiased flex flex-col min-h-screen selection:bg-blue-100 selection:text-blue-900">
 
-    <div class="relative z-10">
-        <nav class="max-w-7xl mx-auto px-6 pt-6">
-            <div class="glass gradient-border rounded-[30px] px-5 py-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-                <a href="index.html" class="flex items-center gap-3">
-                    <img src="logo.png" alt="SY Danışmanlık logosu" class="w-12 h-12 rounded-2xl object-cover shadow-xl shadow-slate-950/30">
-                    <div>
-                        <div class="font-bold tracking-tight text-lg">SY Danışmanlık</div>
-                        <div class="text-sm text-textMuted">Premium 1:1 eğitim süreci</div>
-                    </div>
-                </a>
-                <div class="flex flex-wrap items-center gap-4 text-sm font-semibold text-textMuted">
-                    <a href="index.html" class="hover:text-white transition-colors">Ana Sayfa</a>
-                    <a href="saatlik.html" class="hover:text-white transition-colors">Saatlik Danışmanlık</a>
-                    <a href="aylik.html" class="text-white">Aylık</a>
+    <!-- Ambient Background -->
+    <div class="aurora-bg"></div>
+
+    <!-- Nav -->
+    <nav class="w-full px-6 py-4 max-w-5xl mx-auto flex justify-between items-center bg-transparent z-10 relative">
+        <div class="flex items-center space-x-3">
+            <img src="logo.png" alt="SY Danışmanlık logosu" class="w-10 h-10 rounded-2xl object-cover shadow-lg shadow-slate-900/10">
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-lg tracking-tight">SY Danışmanlık</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-gradient-accent"></span>
+            </div>
+        </div>
+        <div class="flex items-center gap-4 text-sm font-semibold">
+            <a href="index.html" class="text-textMuted hover:text-textPrimary transition-colors duration-300">Ana Sayfa</a>
+            <a href="saatlik.html" class="text-textMuted hover:text-textPrimary transition-colors duration-300">1:1 Danışmanlık Görüşmesi</a>
+            <a href="aylik.html" class="text-textPrimary transition-colors duration-300">1:1 Premium Eğitim Programı</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow relative z-10">
+        <!-- Hero Section -->
+        <section class="max-w-4xl mx-auto px-6 pt-2 pb-10 md:pt-4 md:pb-14 text-center flex flex-col items-center relative">
+
+            <div class="relative mb-5 group">
+                <div class="absolute inset-0 bg-gradient-accent rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-500 scale-110"></div>
+                <div class="w-32 h-32 md:w-36 md:h-36 p-[3px] rounded-full bg-gradient-accent relative">
+                    <img src="profile-photo.jpeg" alt="Şenol Yılmaz" class="w-full h-full rounded-full object-cover border-3 border-white">
                 </div>
             </div>
-        </nav>
 
-        <main class="max-w-7xl mx-auto px-6 pt-10 pb-16 md:pt-16 md:pb-24">
-            <section class="grid xl:grid-cols-[1.1fr_.9fr] gap-8 items-center">
-                <div>
-                    <div class="inline-flex items-center gap-3 glass gradient-border rounded-full px-4 py-2 text-sm text-textMuted">
-                        <span class="w-2 h-2 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(147,197,253,.9)]"></span>
-                        4 haftalık uygulamalı gelişim sistemi
-                    </div>
-                    <h1 class="mt-6 text-5xl md:text-6xl xl:text-7xl font-black leading-[0.95] tracking-[-0.06em] max-w-4xl">
-                        <span class="block text-shine">Aylık 1:1 Eğitim & Danışmanlık</span>
-                    </h1>
-                    <p class="mt-6 text-lg md:text-xl text-textMuted max-w-3xl leading-relaxed">
-                        4 hafta boyunca birebir, uygulamalı sosyal medya içerik üretimi eğitimi.
-                    </p>
-                    <div class="mt-8 flex flex-wrap gap-4">
-                        <!-- TODO: PayTR aylık linki eklenecek -->
-                        <a href="#" class="inline-flex items-center justify-center rounded-full px-7 py-4 font-semibold text-slate-950 bg-white hover:bg-slate-100 transition shadow-xl">
-                            Aylığı Başlat
-                        </a>
-                        <a href="https://wa.me/message/4RDIMC5OULEOO1" target="_blank" class="inline-flex items-center justify-center rounded-full px-7 py-4 font-semibold text-white bg-whatsapp hover:bg-whatsappHover transition shadow-[0_0_30px_rgba(37,211,102,.35)]">
-                            WhatsApp’tan sor
-                        </a>
-                    </div>
-                </div>
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-black/5 bg-white/50 backdrop-blur-sm mb-3 shadow-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-gradient-accent"></span>
+                <h2 class="text-xs font-semibold text-textMuted uppercase tracking-widest">Şenol Yılmaz</h2>
+            </div>
 
-                <div class="grid sm:grid-cols-2 gap-4">
-                    <div class="glass gradient-border rounded-[28px] p-6 hover-lift">
-                        <div class="eyebrow">Haftalık ritim</div>
-                        <div class="stat-value mt-4">4</div>
-                        <p class="mt-3 text-textMuted">Hafta boyunca yapılandırılmış görüşme, uygulama ve geri bildirim akışı.</p>
-                    </div>
-                    <div class="glass gradient-border rounded-[28px] p-6 hover-lift">
-                        <div class="eyebrow">Birebir temas</div>
-                        <div class="stat-value mt-4">1:1</div>
-                        <p class="mt-3 text-textMuted">Sana ve hedeflerine göre özelleştirilmiş eğitim deneyimi.</p>
-                    </div>
-                    <div class="glass gradient-border rounded-[28px] p-6 hover-lift sm:col-span-2">
-                        <div class="eyebrow">Süreç çıktısı</div>
-                        <div class="mt-4 grid md:grid-cols-3 gap-4 text-textMuted">
-                            <div class="glass rounded-2xl p-4">İçerik sistemi</div>
-                            <div class="glass rounded-2xl p-4">Analiz ve optimizasyon</div>
-                            <div class="glass rounded-2xl p-4">Sürdürülebilir büyüme planı</div>
+            <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-4 leading-[1.1]" style="letter-spacing: -0.03em;">
+                <span class="text-gradient">1:1 Premium Eğitim Programı</span>
+            </h1>
+
+            <p class="max-w-2xl mb-8 leading-relaxed" style="letter-spacing: 0.01em;">
+                <span class="text-base md:text-lg font-semibold text-black">Sosyal medyada içerik üretiminin tüm aşamalarını birebir öğreten<br>4 haftalık premium mentorluk programı.</span>
+            </p>
+
+            <a href="https://wa.me/message/4RDIMC5OULEOO1" target="_blank" class="w-72 inline-flex items-center justify-center bg-whatsapp hover:bg-whatsappHover text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-glow-whatsapp transform hover:-translate-y-1">
+                <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                WhatsApp'tan Başvur
+            </a>
+
+            <!-- TODO: PayTR aylık program linki bekleniyor -->
+            <a href="#" class="w-72 inline-flex items-center justify-center text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-glow-accent transform hover:-translate-y-1 mt-3" style="background: linear-gradient(135deg, #0F2744 0%, #1E3A5F 40%, #3B6EA8 100%);">
+                Programa Başla
+            </a>
+
+            <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#FAFAF8] to-transparent pointer-events-none"></div>
+        </section>
+
+        <!-- What's included? -->
+        <section class="max-w-4xl mx-auto px-6 pt-20 pb-12 md:pt-24 md:pb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-textPrimary mb-10 text-center" style="letter-spacing: -0.02em;">Bu program neyi içeriyor?</h2>
+            <div class="glass-card rounded-3xl p-8 md:p-14 relative overflow-hidden">
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-gradient-accent opacity-5 rounded-full blur-3xl"></div>
+                <ul class="space-y-10 relative z-10">
+                    <li class="flex items-start group">
+                        <div class="flex-shrink-0 mt-1 w-8 h-8 rounded-full bg-gradient-accent text-white flex items-center justify-center mr-6 shadow-sm group-hover:shadow-glow-accent transition-shadow">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                         </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="mt-16 md:mt-20">
-                <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-                    <div>
-                        <div class="eyebrow">Sistem</div>
-                        <h2 class="mt-3 text-3xl md:text-5xl font-bold tracking-[-0.04em]">4 haftalık akış</h2>
-                    </div>
-                    <p class="text-textMuted max-w-2xl">Her hafta farklı bir odakla ilerliyoruz: strateji, üretim, optimizasyon ve sürdürülebilirlik.</p>
-                </div>
-                <div class="mt-8 grid xl:grid-cols-4 md:grid-cols-2 gap-5">
-                    <article class="glass gradient-border rounded-[30px] p-6 hover-lift">
-                        <div class="eyebrow">Hafta 1</div>
-                        <h3 class="mt-3 text-2xl font-bold">Giriş & Strateji</h3>
-                        <p class="mt-4 text-textMuted leading-relaxed">Birebir görüşme ile hedeflerini netleştiriyor, profilini inceliyor ve ilk uygulamaları birlikte başlatıyoruz.</p>
-                        <div class="mt-6 h-px metal-line"></div>
-                        <ul class="mt-5 space-y-2 text-sm text-textMuted">
-                            <li>• Konumlandırma ve hedef belirleme</li>
-                            <li>• Profil ve içerik teşhisi</li>
-                            <li>• İlk aksiyon listesi</li>
-                        </ul>
-                    </article>
-                    <article class="glass gradient-border rounded-[30px] p-6 hover-lift">
-                        <div class="eyebrow">Hafta 2</div>
-                        <h3 class="mt-3 text-2xl font-bold">İçerik Üretimi</h3>
-                        <p class="mt-4 text-textMuted leading-relaxed">Görüşme sonrası ürettiğin içerikleri analiz ediyor, geliştirme önerileriyle kaliteyi ve netliği artırıyoruz.</p>
-                        <div class="mt-6 h-px metal-line"></div>
-                        <ul class="mt-5 space-y-2 text-sm text-textMuted">
-                            <li>• İçerik yapısı ve akışı</li>
-                            <li>• Hook ve mesaj gücü</li>
-                            <li>• Revize önerileri</li>
-                        </ul>
-                    </article>
-                    <article class="glass gradient-border rounded-[30px] p-6 hover-lift">
-                        <div class="eyebrow">Hafta 3</div>
-                        <h3 class="mt-3 text-2xl font-bold">Optimizasyon</h3>
-                        <p class="mt-4 text-textMuted leading-relaxed">Büyüme taktiklerini, format seçimlerini ve performans sinyallerini birlikte optimize ediyoruz.</p>
-                        <div class="mt-6 h-px metal-line"></div>
-                        <ul class="mt-5 space-y-2 text-sm text-textMuted">
-                            <li>• Format ve seri planı</li>
-                            <li>• Büyüme taktikleri</li>
-                            <li>• Uygulamalı geliştirme</li>
-                        </ul>
-                    </article>
-                    <article class="glass gradient-border rounded-[30px] p-6 hover-lift relative overflow-hidden">
-                        <div class="absolute right-4 top-4 rounded-full bg-amber-300 px-3 py-1 text-xs font-bold tracking-[0.2em] text-slate-950">HEDEF</div>
-                        <div class="eyebrow">Hafta 4</div>
-                        <h3 class="mt-3 text-2xl font-bold">Sürdürülebilir Büyüme</h3>
-                        <p class="mt-4 text-textMuted leading-relaxed">Uzun vadeli içerik planını oluşturuyor, sürecin son değerlendirmesiyle kendi sistemini oturtuyoruz.</p>
-                        <div class="mt-6 h-px metal-line"></div>
-                        <ul class="mt-5 space-y-2 text-sm text-textMuted">
-                            <li>• Uzun vadeli plan</li>
-                            <li>• Performans okuması</li>
-                            <li>• Son değerlendirme</li>
-                        </ul>
-                    </article>
-                </div>
-            </section>
-
-            <section class="mt-16 md:mt-20 grid xl:grid-cols-[1.05fr_.95fr] gap-6">
-                <div class="glass gradient-border rounded-[32px] p-7 md:p-9">
-                    <div class="eyebrow">Neler öğreneceksin?</div>
-                    <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-[-0.04em]">Üretimden analitiğe kadar tam sistem</h2>
-                    <div class="mt-7 grid sm:grid-cols-2 gap-4 text-textMuted">
-                        <div class="glass rounded-2xl p-4">İçerik fikri bulma sistemi</div>
-                        <div class="glass rounded-2xl p-4">Güçlü hook yazımı</div>
-                        <div class="glass rounded-2xl p-4">Kısa video çekim mantığı</div>
-                        <div class="glass rounded-2xl p-4">Kurgu ve akış tasarımı</div>
-                        <div class="glass rounded-2xl p-4">Algoritma sinyallerini okuma</div>
-                        <div class="glass rounded-2xl p-4">Hashtag ve keyword mantığı</div>
-                        <div class="glass rounded-2xl p-4">Profil optimizasyonu</div>
-                        <div class="glass rounded-2xl p-4">Seri içerik planlama</div>
-                        <div class="glass rounded-2xl p-4">İzlenme ve retention yorumu</div>
-                        <div class="glass rounded-2xl p-4">Caption ve CTA kurgusu</div>
-                        <div class="glass rounded-2xl p-4">Analitik okuma ve raporlama</div>
-                        <div class="glass rounded-2xl p-4">Sürdürülebilir içerik disiplini</div>
-                    </div>
-                </div>
-
-                <div class="glass gradient-border rounded-[32px] p-7 md:p-9">
-                    <div class="eyebrow">Karşılaştırma</div>
-                    <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-[-0.04em]">Saatlik vs Aylık</h2>
-                    <div class="mt-7 space-y-4">
-                        <div class="grid grid-cols-3 gap-3 text-sm font-semibold text-textMuted px-4">
-                            <div>Kriter</div>
-                            <div>Saatlik</div>
-                            <div class="text-white">Aylık</div>
+                        <span class="text-xl font-medium text-textPrimary leading-relaxed">Haftada 1 birebir online görüşme (4 hafta boyunca)</span>
+                    </li>
+                    <li class="flex items-start group">
+                        <div class="flex-shrink-0 mt-1 w-8 h-8 rounded-full bg-gradient-accent text-white flex items-center justify-center mr-6 shadow-sm group-hover:shadow-glow-accent transition-shadow">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                         </div>
-                        <div class="glass rounded-2xl p-4 grid grid-cols-3 gap-3 items-center">
-                            <div class="text-textMuted">Süre</div>
-                            <div>1 görüşme</div>
-                            <div class="text-cyan-200 font-semibold">4 hafta süreç</div>
+                        <span class="text-xl font-medium text-textPrimary leading-relaxed">Her ders sonrasında uygulamalı görevler ve içerik üretimi</span>
+                    </li>
+                    <li class="flex items-start group">
+                        <div class="flex-shrink-0 mt-1 w-8 h-8 rounded-full bg-gradient-accent text-white flex items-center justify-center mr-6 shadow-sm group-hover:shadow-glow-accent transition-shadow">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                         </div>
-                        <div class="glass rounded-2xl p-4 grid grid-cols-3 gap-3 items-center">
-                            <div class="text-textMuted">Geri bildirim</div>
-                            <div>Sınırlı</div>
-                            <div class="text-cyan-200 font-semibold">Düzenli analiz</div>
+                        <span class="text-xl font-medium text-textPrimary leading-relaxed">Hazırladığın içeriklere detaylı geliştirme önerileri</span>
+                    </li>
+                    <li class="flex items-start group">
+                        <div class="flex-shrink-0 mt-1 w-8 h-8 rounded-full bg-gradient-accent text-white flex items-center justify-center mr-6 shadow-sm group-hover:shadow-glow-accent transition-shadow">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                         </div>
-                        <div class="glass rounded-2xl p-4 grid grid-cols-3 gap-3 items-center">
-                            <div class="text-textMuted">Uygulama takibi</div>
-                            <div>Yok</div>
-                            <div class="text-cyan-200 font-semibold">Var</div>
+                        <span class="text-xl font-medium text-textPrimary leading-relaxed">1 ay boyunca sürekli mesajlaşma desteği</span>
+                    </li>
+                    <li class="flex items-start group">
+                        <div class="flex-shrink-0 mt-1 w-8 h-8 rounded-full bg-gradient-accent text-white flex items-center justify-center mr-6 shadow-sm group-hover:shadow-glow-accent transition-shadow">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                         </div>
-                        <div class="glass rounded-2xl p-4 grid grid-cols-3 gap-3 items-center">
-                            <div class="text-textMuted">Sistem kurma</div>
-                            <div>Başlangıç seviyesinde</div>
-                            <div class="text-cyan-200 font-semibold">Derin ve sürdürülebilir</div>
-                        </div>
-                        <div class="glass rounded-2xl p-4 grid grid-cols-3 gap-3 items-center">
-                            <div class="text-textMuted">Kim için?</div>
-                            <div>Hızlı netlik isteyen</div>
-                            <div class="text-cyan-200 font-semibold">Gerçek dönüşüm isteyen</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                        <span class="text-xl font-medium text-textPrimary leading-relaxed">Sana özel içerik stratejisi ve büyüme planı</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-            <section class="mt-16 md:mt-20 grid lg:grid-cols-2 gap-6">
-                <div class="glass gradient-border rounded-[32px] p-7 md:p-9">
-                    <div class="eyebrow">Nasıl ilerliyoruz?</div>
-                    <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-[-0.04em]">Düzenli ritim, net aksiyon</h2>
-                    <div class="mt-6 space-y-4 text-textMuted">
-                        <div class="glass rounded-2xl p-5">Haftada 1 görüşme ile o haftanın odağını belirliyoruz.</div>
-                        <div class="glass rounded-2xl p-5">Her ders sonrası uygulama yapıyor, içeriklerini hayata geçiriyorsun.</div>
-                        <div class="glass rounded-2xl p-5">Üretilen içeriklere geri bildirim verip eksikleri birlikte kapatıyoruz.</div>
-                        <div class="glass rounded-2xl p-5">Süreç boyunca daha sağlam kararlar alman için sürekli destek sağlıyorum.</div>
-                    </div>
+        <!-- How does it progress? -->
+        <section class="max-w-6xl mx-auto px-6 py-12 md:py-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-textPrimary mb-12 text-center" style="letter-spacing: -0.02em;">Nasıl ilerliyoruz?</h2>
+
+            <div class="grid md:grid-cols-4 gap-8 md:gap-6 relative">
+                <!-- Connector Line for Desktop -->
+                <div class="hidden md:block absolute top-8 left-[12%] right-[12%] h-[2px] bg-gradient-to-r from-blue-200 via-slate-200 to-blue-200 -z-10 opacity-60"></div>
+
+                <div class="relative flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 rounded-full bg-gradient-accent text-white flex items-center justify-center font-bold text-xl mb-8 shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:shadow-glow-accent">1</div>
+                    <h3 class="text-xl font-bold text-textPrimary mb-3">Hafta 1</h3>
+                    <p class="text-textMuted leading-relaxed text-sm md:text-base">Profilini ve mevcut içeriklerini analiz ediyoruz. Hedefleri belirliyoruz, strateji taslağı çıkarıyoruz.</p>
                 </div>
 
-                <div class="glass gradient-border rounded-[32px] p-7 md:p-9">
-                    <div class="eyebrow">Kimler için?</div>
-                    <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-[-0.04em]">Bu program sana uygunsa</h2>
-                    <div class="mt-6 grid gap-4 text-textMuted">
-                        <div class="glass rounded-2xl p-5">İçerik üretmek istiyor ama sürdürülebilir bir sistem kuramıyorsan</div>
-                        <div class="glass rounded-2xl p-5">Sosyal medyada büyümek için neyi neden yapacağını netleştirmek istiyorsan</div>
-                        <div class="glass rounded-2xl p-5">Sadece fikir değil, düzenli geri bildirim ve uygulama takibi istiyorsan</div>
-                        <div class="glass rounded-2xl p-5">Kendi içerik stilini geliştirirken aynı zamanda sonuç görmek istiyorsan</div>
-                    </div>
+                <div class="relative flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 rounded-full bg-gradient-accent text-white flex items-center justify-center font-bold text-xl mb-8 shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:shadow-glow-accent">2</div>
+                    <h3 class="text-xl font-bold text-textPrimary mb-3">Hafta 2</h3>
+                    <p class="text-textMuted leading-relaxed text-sm md:text-base">İçerik üretim sürecine geçiyoruz. Format, konu ve anlatım tekniklerini birebir uyguluyoruz.</p>
                 </div>
-            </section>
 
-            <section class="mt-16 md:mt-20">
-                <div class="glass gradient-border rounded-[32px] p-7 md:p-9">
-                    <div class="eyebrow">SSS</div>
-                    <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-[-0.04em]">Merak ettiklerin</h2>
-                    <div class="mt-8 space-y-4">
-                        <details class="glass rounded-2xl p-5 group" open>
-                            <summary class="flex items-center justify-between cursor-pointer gap-4">
-                                <span class="text-lg font-semibold">Bu süreçte birebir görüşmeler nasıl oluyor?</span>
-                                <span class="plus text-2xl transition-transform">+</span>
-                            </summary>
-                            <p class="mt-4 text-textMuted leading-relaxed">Her hafta birebir online görüşme yapıyoruz. Görüşmede o haftanın odağını netleştirip sana özel aksiyon listesi çıkarıyoruz.</p>
-                        </details>
-                        <details class="glass rounded-2xl p-5 group">
-                            <summary class="flex items-center justify-between cursor-pointer gap-4">
-                                <span class="text-lg font-semibold">Daha önce içerik üretmediysem uygun mu?</span>
-                                <span class="plus text-2xl transition-transform">+</span>
-                            </summary>
-                            <p class="mt-4 text-textMuted leading-relaxed">Evet. Temelden başlamak isteyen biriysen süreci buna göre sadeleştiriyor, seni adım adım ilerletiyorum.</p>
-                        </details>
-                        <details class="glass rounded-2xl p-5 group">
-                            <summary class="flex items-center justify-between cursor-pointer gap-4">
-                                <span class="text-lg font-semibold">İçeriklerime geri bildirim alabilecek miyim?</span>
-                                <span class="plus text-2xl transition-transform">+</span>
-                            </summary>
-                            <p class="mt-4 text-textMuted leading-relaxed">Evet. Ürettiğin içeriklerin güçlü ve zayıf taraflarını analiz ediyor, geliştirme önerilerini doğrudan iletiyorum.</p>
-                        </details>
-                        <details class="glass rounded-2xl p-5 group">
-                            <summary class="flex items-center justify-between cursor-pointer gap-4">
-                                <span class="text-lg font-semibold">Saatlik yerine neden aylık tercih etmeliyim?</span>
-                                <span class="plus text-2xl transition-transform">+</span>
-                            </summary>
-                            <p class="mt-4 text-textMuted leading-relaxed">Saatlik görüşme sana netlik sağlar; aylık süreç ise netliği gerçek uygulamaya çevirir. Düzenli takip ve geri bildirim fark yaratır.</p>
-                        </details>
-                        <details class="glass rounded-2xl p-5 group">
-                            <summary class="flex items-center justify-between cursor-pointer gap-4">
-                                <span class="text-lg font-semibold">Program sonunda elimde ne olacak?</span>
-                                <span class="plus text-2xl transition-transform">+</span>
-                            </summary>
-                            <p class="mt-4 text-textMuted leading-relaxed">İçerik üretim sistemin, daha güçlü profil yapın, analiz bakışın ve uzun vadeli büyüme planın netleşmiş olacak.</p>
-                        </details>
-                    </div>
+                <div class="relative flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 rounded-full bg-gradient-accent text-white flex items-center justify-center font-bold text-xl mb-8 shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:shadow-glow-accent">3</div>
+                    <h3 class="text-xl font-bold text-textPrimary mb-3">Hafta 3</h3>
+                    <p class="text-textMuted leading-relaxed text-sm md:text-base">Üretilen içerikleri değerlendiriyoruz. Gelişim noktalarını tespit ediyor, sistemi optimize ediyoruz.</p>
                 </div>
-            </section>
 
-            <section class="mt-16 md:mt-20">
-                <div class="glass gradient-border rounded-[36px] p-8 md:p-12 text-center relative overflow-hidden">
-                    <div class="absolute -left-12 top-0 w-52 h-52 rounded-full bg-cyan-300/12 blur-3xl"></div>
-                    <div class="absolute -right-12 bottom-0 w-52 h-52 rounded-full bg-blue-200/12 blur-3xl"></div>
-                    <div class="relative z-10">
-                        <div class="eyebrow justify-center">Başlangıç</div>
-                        <h2 class="mt-4 text-4xl md:text-5xl font-black tracking-[-0.05em] text-shine">Aylık süreci başlat</h2>
-                        <p class="mt-5 text-lg md:text-xl text-textMuted max-w-2xl mx-auto">İçerik üretimini şansa bırakmak yerine 4 haftalık uygulamalı sistemle birlikte inşa edelim.</p>
-                        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <!-- TODO: PayTR aylık linki eklenecek -->
-                            <a href="#" class="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold text-slate-950 bg-white hover:bg-slate-100 transition shadow-xl">
-                                Aylığı Başlat
-                            </a>
-                            <a href="https://wa.me/message/4RDIMC5OULEOO1" target="_blank" class="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold text-white bg-whatsapp hover:bg-whatsappHover transition shadow-[0_0_30px_rgba(37,211,102,.35)]">
-                                WhatsApp’tan yaz
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer class="max-w-7xl mx-auto px-6 pb-10">
-            <div class="glass gradient-border rounded-[28px] px-5 py-5 flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-sm text-textMuted">
-                <div>© 2025 SY Danışmanlık. Tüm hakları saklıdır.</div>
-                <div class="flex gap-4">
-                    <a href="index.html" class="hover:text-white transition-colors">Ana Sayfa</a>
-                    <a href="saatlik.html" class="hover:text-white transition-colors">Saatlik</a>
-                    <a href="aylik.html" class="text-white">Aylık</a>
+                <div class="relative flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 rounded-full bg-gradient-accent text-white flex items-center justify-center font-bold text-xl mb-8 shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:shadow-glow-accent">4</div>
+                    <h3 class="text-xl font-bold text-textPrimary mb-3">Hafta 4</h3>
+                    <p class="text-textMuted leading-relaxed text-sm md:text-base">Süreci perçinliyoruz. Sürdürülebilir büyüme alışkanlıklarını yerleştiriyor, yol haritasını tamamlıyoruz.</p>
                 </div>
             </div>
-        </footer>
-    </div>
+        </section>
+
+        <!-- Who is it for? -->
+        <section class="max-w-5xl mx-auto px-6 py-12 md:py-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-textPrimary mb-10 text-center" style="letter-spacing: -0.02em;">Bu program kimler için?</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card border-gradient-left p-8 rounded-2xl flex items-start space-x-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group">
+                    <div class="flex-shrink-0 mt-1 relative">
+                        <div class="absolute inset-0 bg-gradient-accent blur-md opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                        <span class="text-2xl relative z-10">✨</span>
+                    </div>
+                    <p class="text-textPrimary font-medium text-lg leading-relaxed">Sosyal medyada büyümek isteyen kişisel marka sahipleri</p>
+                </div>
+                <div class="glass-card border-gradient-left p-8 rounded-2xl flex items-start space-x-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group">
+                    <div class="flex-shrink-0 mt-1 relative">
+                        <div class="absolute inset-0 bg-gradient-accent blur-md opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                        <span class="text-2xl relative z-10">🎬</span>
+                    </div>
+                    <p class="text-textPrimary font-medium text-lg leading-relaxed">İçerik üretmeye başlamak isteyen ya da sistematik hale getirmek isteyenler</p>
+                </div>
+                <div class="glass-card border-gradient-left p-8 rounded-2xl flex items-start space-x-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group">
+                    <div class="flex-shrink-0 mt-1 relative">
+                        <div class="absolute inset-0 bg-gradient-accent blur-md opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                        <span class="text-2xl relative z-10">🧭</span>
+                    </div>
+                    <p class="text-textPrimary font-medium text-lg leading-relaxed">Yalnız ilerlemiyor, birebir rehberlik isteyen kişiler</p>
+                </div>
+                <div class="glass-card border-gradient-left p-8 rounded-2xl flex items-start space-x-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group">
+                    <div class="flex-shrink-0 mt-1 relative">
+                        <div class="absolute inset-0 bg-gradient-accent blur-md opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                        <span class="text-2xl relative z-10">🚀</span>
+                    </div>
+                    <p class="text-textPrimary font-medium text-lg leading-relaxed">Sıfırdan ya da durağan bir noktadan hızla ilerlemek isteyenler</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="relative py-16 px-6 overflow-hidden mt-6">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-slate-50/50 -z-10"></div>
+            <div class="absolute inset-0 bg-white/40 backdrop-blur-3xl -z-10"></div>
+
+            <div class="max-w-2xl mx-auto text-center relative z-10">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 tracking-tight" style="letter-spacing: -0.03em;">
+                    <span class="text-gradient">Programa başlamak için iletişime geç</span>
+                </h2>
+                <p class="text-lg md:text-xl text-textMuted mb-12 font-medium">4 hafta içinde içerik üretim sistemini birlikte kuralım.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <!-- TODO: PayTR aylık program linki bekleniyor -->
+                    <a href="#" class="inline-flex items-center justify-center text-white font-semibold py-5 px-10 rounded-full transition-all duration-300 shadow-md hover:shadow-glow-accent transform hover:-translate-y-1 text-lg" style="background: linear-gradient(135deg, #0F2744 0%, #1E3A5F 40%, #3B6EA8 100%);">
+                        Programa Başla
+                    </a>
+                    <a href="https://wa.me/message/4RDIMC5OULEOO1" target="_blank" class="inline-flex items-center justify-center bg-whatsapp hover:bg-whatsappHover text-white font-semibold py-5 px-10 rounded-full transition-all duration-300 shadow-md hover:shadow-glow-whatsapp transform hover:-translate-y-1 text-lg">
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                        WhatsApp'tan Başvur
+                    </a>
+                </div>
+                <p class="text-sm text-textMuted mt-6 opacity-80">Program online olarak gerçekleştirilmektedir.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-10 text-center relative z-10">
+        <div class="absolute top-0 left-[20%] right-[20%] h-px bg-gradient-to-r from-transparent via-black/5 to-transparent"></div>
+        <p class="text-sm text-textMuted">&copy; 2025 Şenol Yılmaz. Tüm hakları saklıdır.</p>
+    </footer>
 </body>
 </html>
